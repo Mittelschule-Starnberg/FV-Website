@@ -1,0 +1,13 @@
+'os.Site:Content.Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Headline
+    icon: header
+    position: 200
+    inlineEditable: true
+  properties:
+    title:
+      defaultValue: 'headline'
+      options:
+        preset: 'text.title'

@@ -1,0 +1,34 @@
+FROM php:8.1-cli AS build
+
+COPY ./ /app
+COPY ./devOps/.htpasswd /app/.htpasswd
+
+# create /app/Data/Persistent directory to prevent root owning it when /app/Data/Persistent/Resources is mounted on runtime
+RUN mkdir -p /app/Data/Persistent
+
+# expose Exceptions to the Web
+RUN mkdir -p /app/Data/Logs/Exceptions
+RUN ln -s /app/Data/Logs/Exceptions /app/Web/71a354d6-8455-49fb-81e4-20ebd0927381
+RUN echo "Options +Indexes" > /app/Data/Logs/Exceptions/.htaccess
+
+RUN rm -r /app/devOps
+RUN rm -r /app/DistributionPackages/Qf.Qf/.yarn
+RUN rm -r /app/DistributionPackages/Qf.Qf/node_modules
+RUN rm /app/DistributionPackages/Qf.Qf/.yarnrc.yml
+RUN rm /app/DistributionPackages/Qf.Qf/yarn.lock
+RUN rm /app/DistributionPackages/Qf.Qf/webpack.config.js
+RUN rm /app/DistributionPackages/Qf.Qf/package.json
+RUN rm /app/DistributionPackages/Qf.Qf/Resources/Public/Frontend/README.md
+RUN rm /app/.editorconfig
+RUN rm /app/.gitignore
+RUN rm /app/.prettierignore
+RUN rm /app/composer.lock
+RUN rm /app/README.md
+RUN rm /app/bitbucket-pipelines.yml
+
+FROM qfact/neos:php-8.1
+WORKDIR /app
+COPY --from=build /app ./
+COPY ./devOps/http.conf /opt/docker/etc/httpd/vhost.common.d/http.conf
+# Fix permissions
+RUN chown -R application:application /app

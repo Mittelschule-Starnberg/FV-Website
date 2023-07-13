@@ -1,0 +1,37 @@
+prototype(os.Site:Document.AbstractPage) < prototype(Neos.Neos:Page) {
+    httpResponseHead {
+        headers {
+            'X-Frame-Options' = 'sameorigin'
+            'X-XSS-Protection' = '1; mode=block'
+            'X-Content-Type-Options' = 'nosniff'
+            Permissions-Policy = 'interest-cohort=()'
+        }
+    }
+
+    headTags = Neos.Fusion:Component {
+        @position = 'before closingHeadTag'
+
+        renderer = afx`
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <link rel="stylesheet" href={StaticResource.uri('os.Site', 'Public/Frontend/build/app.css')} />
+        `
+    }
+
+    body = os.Site:Component.Layout.Default {
+        content = ''
+        @process.normalize = CodeQ.UnicodeNormalizer:Normalizer
+    }
+
+    scriptTags = Neos.Fusion:Component {
+        @position = 'before closingBodyTag'
+
+        renderer = afx`
+            <script src={StaticResource.uri('os.Site', 'Public/Frontend/build/app.js')}></script>
+            <script src={StaticResource.uri('Sitegeist.Lazybones', 'Public/JavaScript/lazysizes.min.js')}></script>
+        `
+    }
+
+    lastVisitedNodeScript = false
+}
