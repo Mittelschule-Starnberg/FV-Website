@@ -3,16 +3,16 @@ prototype(os.Site:Document.HomePage) < prototype(os.Site:Document.AbstractPage) 
     # so don't append it again
     head.titleTag.outputSuffixOnTitleOverride = false
 
-    body.content = Neos.Fusion:Component {
+    body.content = Neos.Fusion:Join {
         main = Neos.Neos:ContentCollection {
             nodePath = 'main'
-        }
 
-        pageHeader = os.Site:Component.PageHeader
+            attributes.class.@process.collectionClass >
+            attributes.class = 'app'
+        }
 
         renderer = afx`
             <main class="main">
-                {props.pageHeader}
                 {props.main}
             </main>
         `

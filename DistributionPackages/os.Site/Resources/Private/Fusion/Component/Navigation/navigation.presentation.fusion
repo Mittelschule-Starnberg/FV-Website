@@ -1,0 +1,29 @@
+prototype(os.Site:Widget.Navigation) < prototype(Neos.Fusion:Component) {
+
+    items = ''
+
+    renderer = afx`
+        <div class="navigation">
+            <div class="navigation-inner">
+                <div class="navigation-branding">
+                    <img class="navigation-branding-logo" src="" alt="logo" />
+                    <div class="navigation-branding-content">
+                        <p class="branding-headline">Förderverin</p>
+                        <p class="branding-text">Mittelschule Starnberg</p>
+                    </div>
+                </div>
+                <span class="navigation-line"></span>
+                <div class="navigation-items">
+                    <div class="navigation-items-container">
+                        {props.items}
+                    </div>
+                </div>
+                <div class="navigation-mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    `
+}

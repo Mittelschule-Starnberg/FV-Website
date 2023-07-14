@@ -21,11 +21,22 @@ Neos:
     fusion:
       autoInclude:
         os.Site: true
-    # nodeTypes:
-    #   groups:
-    #     contentBlocks:
-    #       position: 110
-    #       label: 'Content Blocks'
+    nodeTypes:
+      groups:
+        page:
+          position: start
+          label: "Pages"
+          collapsed: false
+        elements:
+          position: 50
+          label: 'Elements'
+          collapsed: false
+        widgets:
+          position: 150
+          label: "Widgets"
+        submodules:
+          position: 200
+          label: "Submodules"
     Ui:
       frontendConfiguration:
         hotkeys: ~

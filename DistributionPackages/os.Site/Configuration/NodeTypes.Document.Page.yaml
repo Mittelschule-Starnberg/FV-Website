@@ -2,9 +2,9 @@
   superTypes:
     'os.Site:Document.AbstractPage': true
   ui:
-    label: i18n
+    label: 'Page'
     icon: file-o
     position: 100
   childNodes:
-    pageHeader:
-      type: 'os.Site:Content.PageHeader'
+    main:
+      type: 'Neos.Neos:ContentCollection'

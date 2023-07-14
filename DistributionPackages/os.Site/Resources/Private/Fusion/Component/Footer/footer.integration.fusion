@@ -1,0 +1,15 @@
+prototype(os.Site:Content.Footer) < prototype(Neos.Fusion:Component) {
+
+    groups = Neos.Fusion:Loop {
+        items = ${q(node).children().children('[instanceof os.Site:Content.FooterSection]').get()}
+        itemRenderer = afx`
+            <section class="footer-section">
+                <p class="footer-section-label">{q(item).property('title')}</p>
+            </section>
+        `
+    }
+
+    renderer = os.Site:Widget.Footer {
+        @apply.props = ${props}
+    }
+}

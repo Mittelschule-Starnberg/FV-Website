@@ -33,6 +33,7 @@ Encore
     })
 
     .enableSassLoader()
+	.autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

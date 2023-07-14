@@ -1,0 +1,23 @@
+'os.Site:Content.FooterSection':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Footer Section
+    icon: 'folder'
+    position: 200
+    inlineEditable: true
+    group: 'submodules'
+    inspector:
+      groups:
+        'details':
+          label: 'Details'
+  constraints:
+    nodeTypes:
+      '*': false
+  properties:
+    title:
+      type: string
+      ui:
+        label: 'Title'
+        inspector:
+          group: 'details'

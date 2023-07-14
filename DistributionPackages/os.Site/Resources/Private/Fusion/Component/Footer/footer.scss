@@ -1,0 +1,106 @@
+@use "../../../Assets/styles/abstracts/mixins" as *;
+@use "../../../Assets/styles/abstracts/functions" as *;
+@use "../../../Assets/styles/abstracts/variables" as *;
+
+.footer {
+    width: 100%;
+    height: auto;
+
+    background: var(--secondary-background);
+
+    z-index: 999;
+
+    .footer-inner {
+        margin: 0 auto;
+        padding: 0 var(--dynamic-padding);
+        max-width: var(--viewport);
+
+        .footer-top {
+            padding: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+            grid-column-gap: 5%;
+            grid-row-gap: 50px;
+
+            .footer-section {
+                height: fit-content;
+
+                display: grid;
+                grid-gap: 10px;
+
+                flex: 1 1 auto;
+
+                .footer-section-label {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin: 0;
+
+                    text-transform: uppercase;
+
+                    color: rgba(black, .6);
+                }
+            }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(black, .1);
+            padding: 33px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-wrap: wrap;
+            grid-gap: 20px;
+
+            .footer-bottom-left {
+                width: fit-content;
+
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1 1 auto;
+                justify-content: flex-start;
+
+                grid-gap: 20px;
+
+                @include media-down('xs') {
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                // FOOTER LINK
+                .fms-link {
+                    font-size: 14px;
+                    font-weight: 500;
+                    height: fit-content;
+                    color: rgba(black, .8);
+
+                    transition: color 200ms;
+
+                    position: relative;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: rgba(black, 1);
+                        transition: color 200ms;
+                    }
+                }
+            }
+
+            .footer-bottom-right {
+                width: fit-content;
+                float: right;
+
+                text-align: right;
+
+                @include media-down('xs') {
+                    text-align: center;
+                }
+
+                .footer-copyright {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

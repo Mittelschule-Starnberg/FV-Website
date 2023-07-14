@@ -11,7 +11,8 @@ prototype(os.Site:Component.Layout.Default) < prototype(Neos.Fusion:Component) {
     }
 
     renderer = afx`
-        <os.Site:Component.Header />
+        <os.Site:Content.Navigation />
         {props.content}
+        <os.Site:Content.Footer />
     `
 }

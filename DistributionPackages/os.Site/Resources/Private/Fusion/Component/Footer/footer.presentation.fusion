@@ -1,0 +1,18 @@
+prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    {props.groups}
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left"></div>
+                    <div class="footer-bottom-right">
+                        <p class="footer-copyright"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+}

@@ -1,0 +1,14 @@
+prototype(os.Site:Content.Navigation) < prototype(Neos.Fusion:Component) {
+
+    items = Neos.Fusion:Loop {
+        items = ${q(node).find('[instanceof os.Site:Document.Page], [instanceof os.Site:Document.Homepage]').get()}
+        itemName = 'item'
+        itemRenderer = os.Site:Widget.NavigationItem {
+            @context.node = ${item}
+        }
+    }
+
+    renderer = os.Site:Widget.Navigation {
+        @apply.props = ${props}
+    }
+}

@@ -1,0 +1,22 @@
+@use './typografie' as *;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-blue: #016FB9;
+    --secondary-background: #F2F2F2;
+    --accent: rgba(0, 0, 0, 0.2);
+
+    --viewport: 1920px;
+
+    --dynamic-padding: calc((100%/1920) * 100);
+    --border-radius: 8px;
+}
