@@ -1,0 +1,13 @@
+prototype(os.Site:Content.FooterSection) < prototype(Neos.Fusion:Component) {
+
+    title = ${q(node).property('title')}
+
+    content = ''
+
+    renderer = afx`
+        <section class="footer-section">
+            <p class="footer-section-label">{props.title}</p>
+            {props.content}
+        </section>
+    `
+}
