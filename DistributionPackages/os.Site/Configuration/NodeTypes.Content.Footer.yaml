@@ -6,11 +6,18 @@
     label: Footer
     icon: 'folder'
     position: 200
-    inlineEditable: false
+    inlineEditable: true
     group: 'hidden'
   constraints:
     nodeTypes:
       '*': false
-      'os.Site:Content.FooterSection': true
   childNodes:
+    sections:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': false
+          'os.Site:Content.FooterSection': true
+    legals:
+      type: 'Neos.Neos:ContentCollection'
 

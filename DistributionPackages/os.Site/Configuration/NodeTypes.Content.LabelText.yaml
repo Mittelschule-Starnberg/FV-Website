@@ -1,25 +1,25 @@
-'os.Site:Content.FooterSection':
+'os.Site:Content.LabelText':
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: Footer Section
-    icon: 'folder'
+    label: LabelText
+    icon: 'label'
     position: 200
     inlineEditable: true
-    group: 'submodules'
     inspector:
       groups:
         'details':
           label: 'Details'
-  constraints:
-    nodeTypes:
-      '*': false
-      'os.Site:Content.LabelText': true
   properties:
-    title:
+    label:
       type: string
       ui:
-        label: 'Title'
+        label: 'Label'
         inspector:
           group: 'details'
-  childNodes:
+    text:
+      type: string
+      ui:
+        label: 'text'
+        inspector:
+          group: 'details'

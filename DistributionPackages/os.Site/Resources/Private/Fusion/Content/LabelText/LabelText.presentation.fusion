@@ -1,0 +1,6 @@
+prototype(os.Site:Element.LabelText) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <p>{props.label} {props.text}</p>
+    `
+}

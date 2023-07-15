@@ -1,0 +1,15 @@
+prototype(os.Site:Content.LabelText) < prototype(Neos.Neos:ContentComponent) {
+
+    label = os.Site:Content.Headline {
+
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+        fallback = 'Error displaying headline'
+    }
+
+    renderer = os.Site:Element.LabelText {
+        @apply.props = ${props}
+    }
+}

@@ -4,7 +4,7 @@ prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
         <div class="footer">
             <div class="footer-inner">
                 <div class="footer-top">
-                    {props.groups}
+                    {props.sections}
                 </div>
                 <div class="footer-bottom">
                     <div class="footer-bottom-left"></div>
