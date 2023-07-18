@@ -6,7 +6,7 @@ prototype(os.Site:Widget.Navigation) < prototype(Neos.Fusion:Component) {
         <div class="navigation">
             <div class="navigation-inner">
                 <div class="navigation-branding">
-                    <img class="navigation-branding-logo" src="" alt="logo" />
+                    <img class="navigation-branding-logo" src={props.logo} alt="logo" />
                     <div class="navigation-branding-content">
                         <p class="branding-headline">Förderverin</p>
                         <p class="branding-text">Mittelschule Starnberg</p>
@@ -15,7 +15,11 @@ prototype(os.Site:Widget.Navigation) < prototype(Neos.Fusion:Component) {
                 <span class="navigation-line"></span>
                 <div class="navigation-items">
                     <div class="navigation-items-container">
-                        {props.items}
+                        <Neos.Fusion:Loop items={props.menuItems} itemName="menuItem" @children="itemRenderer">
+                            <Carbon.Link:Link additionalClass={"navigation-item " + menuItem.state} node={menuItem.node}>
+                                {menuItem.label}
+                            </Carbon.Link:Link>
+                        </Neos.Fusion:Loop>
                     </div>
                 </div>
                 <div class="navigation-mobile">

@@ -1,0 +1,9 @@
+prototype(os.Site:Content.Link) < prototype(Neos.Neos:ContentComponent) {
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <a class="link">{props.text}</a>
+    `
+}

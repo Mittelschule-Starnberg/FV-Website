@@ -5,9 +5,14 @@ prototype(os.Site:Content.Footer) < prototype(Neos.Fusion:Component) {
         itemRenderer = os.Site:Content.FooterSection {
             title = ${q(item).property('title')}
 
-            content = os.Site:Content.LabelText {
-                @context.node = ${props}
-            }
+            content = ${q(item).children()}
+        }
+    }
+
+    legals = Neos.Fusion:Loop {
+        items = ${q(node).children('footer').children('legals').children()}
+        itemRenderer = os.Site:Content.Link {
+            @context.node = ${item}
         }
     }
 

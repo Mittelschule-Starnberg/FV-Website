@@ -2,24 +2,20 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: LabelText
-    icon: 'label'
+    label: Label Text
+    icon: file-text
     position: 200
     inlineEditable: true
-    inspector:
-      groups:
-        'details':
-          label: 'Details'
   properties:
     label:
-      type: string
+      options:
+        preset: 'text.free'
       ui:
-        label: 'Label'
-        inspector:
-          group: 'details'
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: "Projekt Titel hier einfügen"
+            autoparagraph: false
     text:
-      type: string
-      ui:
-        label: 'text'
-        inspector:
-          group: 'details'
+      options:
+        preset: 'text.free'

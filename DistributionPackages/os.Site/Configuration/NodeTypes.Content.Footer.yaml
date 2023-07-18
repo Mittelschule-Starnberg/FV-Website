@@ -20,4 +20,7 @@
           'os.Site:Content.FooterSection': true
     legals:
       type: 'Neos.Neos:ContentCollection'
-
+      constraints:
+        nodeTypes:
+          '*': false
+          'os.Site:Content.Link': true

@@ -1,0 +1,22 @@
+'os.Site:Content.Link':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Link
+    icon: file-text
+    position: 200
+    inlineEditable: true
+    inspector:
+      groups:
+        'general':
+          label: 'Allgemein'
+  properties:
+    text:
+      options:
+        preset: 'text.free'
+    url:
+      type: string
+      ui:
+        label: 'URL'
+        inspector:
+          group: 'general'

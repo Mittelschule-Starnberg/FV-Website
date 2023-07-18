@@ -1,12 +1,22 @@
 'os.Site:Content.Navigation':
   superTypes:
     'Neos.Neos:Content': true
-    'Neos.Neos:ContentCollection': true
   ui:
     label: Navigation
     icon: 'icon-image'
     position: 200
     inlineEditable: false
     group: 'hidden'
-  childNodes:
+    inspector:
+      groups:
+        'general':
+          label: 'Allgemein'
+  properties:
+    logo:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Logo'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
 

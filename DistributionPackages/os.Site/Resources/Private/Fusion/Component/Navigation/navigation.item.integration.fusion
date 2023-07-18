@@ -1,6 +1,6 @@
 prototype(os.Site:Widget.NavigationItem) < prototype(Neos.Fusion:Component) {
-
+    // <a class="navigation-item" href={q(node).property('url')}>{q(node).property('title')}</a>
     renderer = afx`
-       <a class="navigation-item" href={q(node).property('url')}>{q(node).property('title')}</a>
+        <a class="navigation-item" href={q(item).property('url')}>{q(item).property('title')}</a>
     `
 }

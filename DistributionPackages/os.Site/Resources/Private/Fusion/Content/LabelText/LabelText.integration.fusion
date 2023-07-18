@@ -1,15 +1,17 @@
-prototype(os.Site:Content.LabelText) < prototype(Neos.Neos:ContentComponent) {
+prototype(os.Site:Content.LabelText) < prototype(Neos.Fusion:Component) {
 
-    label = os.Site:Content.Headline {
-
+    label = Neos.Neos:Editable {
+        node=${node}
+        property = 'label'
     }
 
     text = Neos.Neos:Editable {
         property = 'text'
         fallback = 'Error displaying headline'
     }
+    @process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 
     renderer = os.Site:Element.LabelText {
-        @apply.props = ${props}
+        @context.node = ${props}
     }
 }

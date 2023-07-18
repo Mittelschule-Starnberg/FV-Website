@@ -7,9 +7,13 @@ prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
                     {props.sections}
                 </div>
                 <div class="footer-bottom">
-                    <div class="footer-bottom-left"></div>
+                    <div class="footer-bottom-left">
+                        {props.legals}
+                    </div>
                     <div class="footer-bottom-right">
-                        <p class="footer-copyright"></p>
+                        <p class="footer-copyright">
+                            © 2023 Förderverein der Mittelschule Starnberg. All Rights Reserved.
+                        </p>
                     </div>
                 </div>
             </div>

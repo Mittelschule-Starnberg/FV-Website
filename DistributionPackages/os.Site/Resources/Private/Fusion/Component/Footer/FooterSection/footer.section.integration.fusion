@@ -1,13 +1,12 @@
 prototype(os.Site:Content.FooterSection) < prototype(Neos.Fusion:Component) {
-
-    title = ${q(node).property('title')}
-
-    content = ''
-
     renderer = afx`
         <section class="footer-section">
             <p class="footer-section-label">{props.title}</p>
-            {props.content}
+            <Neos.Fusion:Loop items={props.content}>
+                <Neos.Neos:NodeLink node={item} itemName="nodeItem">
+                    {nodeItem}
+                </Neos.Neos:NodeLink>
+            </Neos.Fusion:Loop>
         </section>
     `
 }
