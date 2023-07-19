@@ -22,6 +22,11 @@
 
         "neos/nodetypes-contentreferences": "*"
     },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Site\\": "Classes"
+        }
+    },
     "extra": {
         "neos": {
             "package-key": "os.Site"

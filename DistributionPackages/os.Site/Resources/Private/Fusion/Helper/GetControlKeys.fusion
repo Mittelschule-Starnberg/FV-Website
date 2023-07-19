@@ -1,0 +1,4 @@
+prototype(os.Site:Helper.GetControlKeys) {
+    @class = 'fms\\Fusion\\GetControlKeys'
+    identifier = ''
+}

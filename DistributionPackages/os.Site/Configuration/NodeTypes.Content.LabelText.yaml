@@ -10,12 +10,6 @@
     label:
       options:
         preset: 'text.free'
-      ui:
-        inlineEditable: true
-        inline:
-          editorOptions:
-            placeholder: "Projekt Titel hier einfügen"
-            autoparagraph: false
     text:
       options:
         preset: 'text.free'

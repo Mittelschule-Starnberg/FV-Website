@@ -8,8 +8,8 @@ prototype(os.Site:Widget.Navigation) < prototype(Neos.Fusion:Component) {
                 <div class="navigation-branding">
                     <img class="navigation-branding-logo" src={props.logo} alt="logo" />
                     <div class="navigation-branding-content">
-                        <p class="branding-headline">Förderverin</p>
-                        <p class="branding-text">Mittelschule Starnberg</p>
+                        <p class="branding-headline">{props.title}</p>
+                        <p class="branding-text">{props.subTitle}</p>
                     </div>
                 </div>
                 <span class="navigation-line"></span>

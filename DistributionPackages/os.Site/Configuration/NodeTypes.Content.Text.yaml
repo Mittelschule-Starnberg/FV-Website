@@ -1,4 +1,3 @@
-
 'os.Site:Content.Text':
   superTypes:
     'Neos.Neos:Content': true

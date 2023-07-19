@@ -1,0 +1,21 @@
+prototype(os.Site:Content.LabelText) < prototype(Neos.Neos:ContentComponent) {
+
+    label = Neos.Neos:Editable {
+        property = 'label'
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <div class="label-text">
+            <div class="label">
+                {props.label}
+            </div>
+            <div class="text">
+                {props.text}
+            </div>
+        </div>
+    `
+}

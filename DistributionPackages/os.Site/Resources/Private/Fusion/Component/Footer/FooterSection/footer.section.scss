@@ -1,0 +1,27 @@
+.footer-section {
+    height: fit-content;
+
+    display: grid;
+    grid-gap: 10px;
+
+    flex: 1 1 auto;
+
+    .footer-section-title {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+
+        text-transform: uppercase;
+
+        color: rgba(black, .6);
+    }
+
+    .footer-block-section {
+        height: fit-content;
+
+        display: grid;
+        grid-gap: 10px;
+
+        flex: 1 1 auto;
+    }
+}

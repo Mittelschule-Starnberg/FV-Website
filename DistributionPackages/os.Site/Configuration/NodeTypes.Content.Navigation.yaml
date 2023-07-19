@@ -19,4 +19,17 @@
         reloadIfChanged: true
         inspector:
           group: 'general'
-
+    title:
+      type: string
+      ui:
+        label: 'Title'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
+    subTitle:
+      type: string
+      ui:
+        label: 'SubTitle'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'

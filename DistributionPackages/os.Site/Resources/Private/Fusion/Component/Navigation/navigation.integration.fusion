@@ -1,14 +1,15 @@
 prototype(os.Site:Content.Navigation) < prototype(Neos.Fusion:Component) {
 
     menuItems = Neos.Neos:MenuItems {
-        itemCollection = ${q(site).add(q(site).children('[instanceof Neos.Neos:Document]')).get()}
+        itemCollection = ${q(site).add(q(site).children('[instanceof Neos.Neos:Document][inHeader=true]')).get()}
     }
 
     logo =  Neos.Neos:ImageUri {
         asset = ${q(node).property('logo')}
     }
 
-
+    title = ${q(node).closest('[instanceof os.Site:Document.HomePage]').children('navigation').property('title')}
+    subTitle = ${q(node).closest('[instanceof os.Site:Document.HomePage]').children('navigation').property('subTitle')}
 
     renderer = os.Site:Widget.Navigation {
         @apply.props = ${props}

@@ -12,9 +12,7 @@ prototype(os.Site:Document.HomePage) < prototype(os.Site:Document.AbstractPage) 
         }
 
         renderer = afx`
-            <main class="main">
-                {props.main}
-            </main>
+            {props.main}
         `
     }
 }

@@ -1,12 +1,16 @@
-prototype(os.Site:Content.FooterSection) < prototype(Neos.Fusion:Component) {
+prototype(os.Site:Content.FooterSection) < prototype(Neos.Neos:ContentComponent) {
+
+    title = ${q(node).property('title')}
+
+    content = Neos.Neos:ContentCollection {
+        @context.node = ${q(node).children('content').get(0)}
+        attributes.class = 'footer-block-section'
+    }
+
     renderer = afx`
         <section class="footer-section">
-            <p class="footer-section-label">{props.title}</p>
-            <Neos.Fusion:Loop items={props.content}>
-                <Neos.Neos:NodeLink node={item} itemName="nodeItem">
-                    {nodeItem}
-                </Neos.Neos:NodeLink>
-            </Neos.Fusion:Loop>
+            <p class="footer-section-title">{props.title}</p>
+            {props.content}
         </section>
     `
 }

@@ -1,9 +1,33 @@
 prototype(os.Site:Content.Link) < prototype(Neos.Neos:ContentComponent) {
-    text = Neos.Neos:Editable {
-        property = 'text'
-    }
+    linkType = ${q(node).property('linkType')}
+    target = ${q(node).property('url')}
 
-    renderer = afx`
-        <a class="link">{props.text}</a>
-    `
+    renderer = Neos.Fusion:Component {
+        @context.linkType = Neos.Fusion:Case {
+            ExternalLink {
+                condition = ${props.linkType == 'ExternalLink'}
+                renderer = 'os.Site:Element.ExternalLink'
+            }
+
+            DownloadLink {
+                condition = ${props.linkType == 'DownloadLink'}
+                renderer = 'os.Site:Element.DownloadLink'
+            }
+
+            InternalLink {
+                condition = ${true}
+                renderer = 'os.Site:Element.Link'
+            }
+        }
+
+        @context.target = ${q(node).property('url')}
+
+        renderer = Neos.Fusion:Renderer {
+            type = ${linkType}
+            element.target = ${target}
+            element.link = Neos.Neos:Editable {
+                property = 'text'
+            }
+        }
+    }
 }

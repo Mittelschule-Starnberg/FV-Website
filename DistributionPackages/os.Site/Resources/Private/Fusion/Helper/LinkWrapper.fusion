@@ -1,0 +1,6 @@
+prototype(Qf.Es:Helper.LinkWrapper) {
+    @class = 'Vendor\\Site\\Fusion\\LinkWrapper'
+    element = ''
+    linkUrl = ''
+    attrTarget = ''
+}

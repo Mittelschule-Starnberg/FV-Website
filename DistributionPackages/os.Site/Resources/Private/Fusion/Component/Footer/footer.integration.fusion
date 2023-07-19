@@ -1,16 +1,12 @@
 prototype(os.Site:Content.Footer) < prototype(Neos.Fusion:Component) {
 
-    sections = Neos.Fusion:Loop {
-        items = ${q(node).children('footer').children('sections').children()}
-        itemRenderer = os.Site:Content.FooterSection {
-            title = ${q(item).property('title')}
-
-            content = ${q(item).children()}
-        }
+    sections = Neos.Neos:ContentCollection {
+        @context.node = ${q(node).closest('[instanceof os.Site:Document.HomePage]').children('footer').children('sections').get(0)}
+        attributes.class = 'footer-top'
     }
 
     legals = Neos.Fusion:Loop {
-        items = ${q(node).children('footer').children('legals').children()}
+        items = ${q(node).closest('[instanceof os.Site:Document.HomePage]').children('footer').children('legals').children()}
         itemRenderer = os.Site:Content.Link {
             @context.node = ${item}
         }

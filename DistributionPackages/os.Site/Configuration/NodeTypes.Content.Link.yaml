@@ -17,6 +17,17 @@
     url:
       type: string
       ui:
-        label: 'URL'
+        label: 'Target'
         inspector:
           group: 'general'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+    linkType:
+      type: string
+      ui:
+        label: 'LinkType'
+        inspector:
+          group: 'general'
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: Choose
+            dataSourceIdentifier: fms-link-types

@@ -19,7 +19,12 @@
   properties:
     title:
       type: string
+      options:
+        preset: 'text.free'
       ui:
-        label: 'Title'
+        label: 'LinkType'
         inspector:
           group: 'details'
+  childNodes:
+    content:
+      type: 'Neos.Neos:ContentCollection'

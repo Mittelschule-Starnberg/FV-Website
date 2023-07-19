@@ -5,6 +5,17 @@
     label: 'Page'
     icon: file-o
     position: 100
+    inspector:
+      groups:
+        'general':
+          label: 'Allgemein'
+  properties:
+    inHeader:
+      type: boolean
+      ui:
+        label: 'Display in Navigation'
+        inspector:
+          group: 'general'
   childNodes:
     main:
       type: 'Neos.Neos:ContentCollection'

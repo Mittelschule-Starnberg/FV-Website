@@ -3,9 +3,7 @@ prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
     renderer = afx`
         <div class="footer">
             <div class="footer-inner">
-                <div class="footer-top">
-                    {props.sections}
-                </div>
+                {props.sections}
                 <div class="footer-bottom">
                     <div class="footer-bottom-left">
                         {props.legals}
