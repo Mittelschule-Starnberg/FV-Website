@@ -1,10 +1,16 @@
 'os.Site:Document.ProjectPage':
   superTypes:
     'os.Site:Document.AbstractPage': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Project Page'
     icon: file-o
     position: 100
+  properties:
+    title:
+      type: string
+      options:
+        preset: 'text.free'
   childNodes:
     main:
       type: 'Neos.Neos:ContentCollection'

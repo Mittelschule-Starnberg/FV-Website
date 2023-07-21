@@ -1,0 +1,7 @@
+prototype(os.Site:Component.Layout.ProjectPage) < prototype(Neos.Fusion:Component) {
+    content = ''
+
+    renderer = afx`
+        {props.content}
+    `
+}

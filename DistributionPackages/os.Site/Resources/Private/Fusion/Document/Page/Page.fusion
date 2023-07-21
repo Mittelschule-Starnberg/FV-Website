@@ -1,17 +1,20 @@
 prototype(os.Site:Document.Page) < prototype(os.Site:Document.AbstractPage) {
-    body.content = Neos.Fusion:Component {
-        main = Neos.Neos:ContentCollection {
-            nodePath = 'main'
-            tagName = 'main'
+    body = os.Site:Component.Layout.Default {
+        content = Neos.Fusion:Component {
+            main = Neos.Neos:ContentCollection {
+                nodePath = 'main'
+                tagName = 'main'
 
-            // prevent adding default css class .neos-contentcollection
+                // prevent adding default css class .neos-contentcollection
             attributes.class.@process.collectionClass >
-            // add custom css classes
+                // add custom css classes
             attributes.class = 'app'
-        }
+            }
 
-        renderer = afx`
-            {props.main}
-        `
+            renderer = afx`
+                {props.main}
+            `
+        }
+        @process.normalize = CodeQ.UnicodeNormalizer:Normalizer
     }
 }
