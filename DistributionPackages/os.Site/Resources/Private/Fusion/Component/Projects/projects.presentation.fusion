@@ -1,0 +1,7 @@
+prototype(os.Site:Widget.Projects) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <div class="project-card-grid">
+            {props.projects}
+        </div>
+    `
+}

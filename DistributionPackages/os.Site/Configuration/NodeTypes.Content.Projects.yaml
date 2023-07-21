@@ -1,0 +1,9 @@
+'os.Site:Content.Projects':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Projects
+    icon: 'icon-image'
+    position: 200
+    inlineEditable: false
+    group: 'widgets'

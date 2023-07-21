@@ -1,0 +1,13 @@
+prototype(os.Site:Content.Projects) < prototype(Neos.Fusion:Component) {
+
+    projects = Neos.Fusion:Loop {
+        items = ${q(documentNode).children('[instanceof os.Site:Document.ProjectPage]').get()}
+        itemRenderer = os.Site:Content.ProjectCard {
+            @context.node = ${item}
+        }
+    }
+
+    renderer = os.Site:Widget.Projects {
+        @apply.props = ${props}
+    }
+}

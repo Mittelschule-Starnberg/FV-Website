@@ -20,3 +20,9 @@ html, body {
     --dynamic-padding: calc((100%/1920) * 100);
     --border-radius: 8px;
 }
+
+.app {
+    margin: 0 auto;
+    padding: 0 var(--dynamic-padding);
+    max-width: var(--viewport);
+}

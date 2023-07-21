@@ -1,0 +1,10 @@
+prototype(os.Site:Content.ProjectCard) < prototype(Neos.Fusion:Component) {
+
+    title = ${q(node).property('title')}
+
+    target = ${q(node).get()}
+
+    renderer = os.Site:Widget.ProjectCard {
+        @apply.props = ${props}
+    }
+}

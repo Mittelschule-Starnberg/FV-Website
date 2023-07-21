@@ -1,0 +1,10 @@
+'os.Site:Document.ProjectPage':
+  superTypes:
+    'os.Site:Document.AbstractPage': true
+  ui:
+    label: 'Project Page'
+    icon: file-o
+    position: 100
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'

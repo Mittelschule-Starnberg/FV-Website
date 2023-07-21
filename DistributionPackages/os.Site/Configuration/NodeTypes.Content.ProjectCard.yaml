@@ -1,0 +1,25 @@
+'os.Site:Content.ProjectCard':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Project Card
+    icon: 'icon-image'
+    position: 200
+    inlineEditable: false
+    group: 'hidden'
+    inspector:
+      groups:
+        'general':
+          label: 'General'
+  properties:
+    projectPage:
+      type: string
+      ui:
+        label: 'Target'
+        inspector:
+          group: 'general'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            assets: FALSE
+            nodeTypes: ['os.Site:Document.ProjectPage']
+            placeholder: 'Name of a project'
