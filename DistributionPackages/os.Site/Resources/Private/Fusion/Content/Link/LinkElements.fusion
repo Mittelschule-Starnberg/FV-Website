@@ -6,7 +6,7 @@ prototype(os.Site:Element.Link) < prototype(Neos.Fusion:Component) {
 
 prototype(os.Site:Element.ExternalLink) < prototype(Neos.Fusion:Component) {
     renderer = afx`
-        <a href={props.target} class="link link-extern">{props.link}</a>
+        <a href={props.target} class="link link-extern" target="_blank">{props.link}</a>
     `
 }
 

@@ -1,6 +1,5 @@
 prototype(os.Site:Content.Link) < prototype(Neos.Neos:ContentComponent) {
     linkType = ${q(node).property('linkType')}
-    target = ${q(node).property('url')}
 
     renderer = Neos.Fusion:Component {
         @context.linkType = Neos.Fusion:Case {
@@ -20,7 +19,9 @@ prototype(os.Site:Content.Link) < prototype(Neos.Neos:ContentComponent) {
             }
         }
 
-        @context.target = ${q(node).property('url')}
+        @context.target = Neos.Neos:ConvertUris {
+            value = ${q(node).property('url')}
+        }
 
         renderer = Neos.Fusion:Renderer {
             type = ${linkType}
