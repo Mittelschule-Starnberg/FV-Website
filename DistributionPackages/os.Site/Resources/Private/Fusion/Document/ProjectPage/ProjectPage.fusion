@@ -1,21 +1,37 @@
 prototype(os.Site:Document.ProjectPage) < prototype(os.Site:Document.AbstractPage) {
-    body = os.Site:Component.Layout.ProjectPage {
+    body = os.Site:Component.Layout.Default {
         content = Neos.Fusion:Component {
-            title = ${q(node).property('title')}
+            title = os.Site:Content.Headline {
+                @context.node = ${q(node).children('title').get(0)}
+            }
+
+            text = os.Site:Content.Text {
+                @context.node = ${q(node).children('text').get(0)}
+            }
+
+            thumbnail = Sitegeist.Kaleidoscope:AssetImageSource {
+                @context.asset = ${q(node).property('thumbnail')}
+            }
 
             main = Neos.Neos:ContentCollection {
                 nodePath = 'main'
-                tagName = 'main'
+                tagName = 'div'
 
                 // prevent adding default css class .neos-contentcollection
                 attributes.class.@process.collectionClass >
-                // add custom css classes
-                attributes.class = 'app'
             }
 
             renderer = afx`
-                {props.title}
-                {props.main}
+                <main class="ProjectPage l-contentWidth l-widget">
+                    <div class="ProjectPage-head">
+                        {props.title}
+                        {props.text}
+                    </div>
+                    <div class="ProjectPage-content">
+                        <img src={props.thumbnail} />
+                        {props.main}
+                    </div>
+                </main>
             `
         }
         @process.normalize = CodeQ.UnicodeNormalizer:Normalizer

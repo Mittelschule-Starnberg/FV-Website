@@ -1,0 +1,14 @@
+.ProjectPage {
+    &-head {
+        border-bottom: 1px solid rgba(black, .25);
+
+        display: grid;
+        grid-gap: 10px;
+
+        padding-bottom: 20px;
+    }
+
+    &-content {
+        padding: 20px 0;
+    }
+}

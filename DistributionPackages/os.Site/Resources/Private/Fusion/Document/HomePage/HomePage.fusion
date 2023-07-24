@@ -8,7 +8,7 @@ prototype(os.Site:Document.HomePage) < prototype(os.Site:Document.AbstractPage) 
             nodePath = 'main'
 
             attributes.class.@process.collectionClass >
-            attributes.class = 'app'
+            attributes.class = 'app l-widget'
         }
 
         renderer = afx`

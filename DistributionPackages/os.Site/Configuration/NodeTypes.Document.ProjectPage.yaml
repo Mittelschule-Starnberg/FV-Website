@@ -6,11 +6,22 @@
     label: 'Project Page'
     icon: file-o
     position: 100
+    inspector:
+      groups:
+        'general':
+          label: 'Allgemein'
   properties:
-    title:
-      type: string
-      options:
-        preset: 'text.free'
+    thumbnail:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Project thumbnail'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
   childNodes:
+    title:
+      type: 'os.Site:Content.Headline'
+    text:
+      type: 'os.Site:Content.Text'
     main:
       type: 'Neos.Neos:ContentCollection'

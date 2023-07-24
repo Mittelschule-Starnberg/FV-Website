@@ -1,9 +1,8 @@
 prototype(os.Site:Widget.ProjectCard) < prototype(Neos.Fusion:Component) {
     renderer = afx`
-        <div class="project-card" data-target={props.target}>
+        <a class="project-card" href={props.link}>
             <div class="project-card-gradient"></div>
-            <div class="project-card-images">
-
+            <div class="project-card-images" style={"background-image: url(" + props.thumbnail + ");"}>
             </div>
             <div class="project-card-content">
                 <h3 class="project-card-title">{props.title}</h3>
@@ -11,6 +10,6 @@ prototype(os.Site:Widget.ProjectCard) < prototype(Neos.Fusion:Component) {
 
                 </div>
             </div>
-        </div>
+        </a>
     `
 }

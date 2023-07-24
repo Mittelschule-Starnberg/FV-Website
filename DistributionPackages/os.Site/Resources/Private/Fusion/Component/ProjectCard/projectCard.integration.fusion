@@ -2,7 +2,15 @@ prototype(os.Site:Content.ProjectCard) < prototype(Neos.Fusion:Component) {
 
     title = ${q(node).property('title')}
 
-    target = ${q(node).get()}
+    thumbnail = Sitegeist.Kaleidoscope:AssetImageSource {
+        @context.asset = ${q(node).property('thumbnail')}
+    }
+
+    target = ${q(node).property('link')}
+
+    link = Neos.Neos:NodeUri {
+        node = ${q(node).get(0)}
+    }
 
     renderer = os.Site:Widget.ProjectCard {
         @apply.props = ${props}

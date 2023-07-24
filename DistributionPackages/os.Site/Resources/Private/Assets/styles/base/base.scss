@@ -1,4 +1,5 @@
 @use './typografie' as *;
+@use './layouts' as *;
 
 html, body {
     margin: 0;
@@ -22,7 +23,8 @@ html, body {
 }
 
 .app {
-    margin: 0 auto;
-    padding: 0 var(--dynamic-padding);
     max-width: var(--viewport);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--dynamic-padding);
 }

@@ -8,7 +8,7 @@ prototype(os.Site:Document.Page) < prototype(os.Site:Document.AbstractPage) {
                 // prevent adding default css class .neos-contentcollection
             attributes.class.@process.collectionClass >
                 // add custom css classes
-            attributes.class = 'app'
+            attributes.class = 'app l-widget'
             }
 
             renderer = afx`

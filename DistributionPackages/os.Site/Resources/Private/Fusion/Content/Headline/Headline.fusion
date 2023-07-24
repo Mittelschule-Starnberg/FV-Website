@@ -1,10 +1,16 @@
 prototype(os.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
+    type = 'h3'
+    class = ''
+    id = ''
+
     title = Neos.Neos:Editable {
         property = 'title'
         fallback = 'Error displaying headline'
     }
 
-    renderer = afx`
-        <div class="headline">{props.title}</div>
-    `
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.type}
+        attributes.class = ${props.class}
+        content = ${props.title}
+    }
 }
