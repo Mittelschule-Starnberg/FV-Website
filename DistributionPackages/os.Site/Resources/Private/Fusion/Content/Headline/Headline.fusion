@@ -1,5 +1,4 @@
 prototype(os.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
-    type = 'h3'
     class = ''
     id = ''
 

@@ -1,0 +1,11 @@
+prototype(os.Site:Widget.Hero) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <div class="Hero">
+            <div class="hero-content">
+                {props.headline}
+                {props.text}
+            </div>
+            {props.image}
+        </div>
+    `
+}

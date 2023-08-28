@@ -11,11 +11,14 @@
 
     .text {
         font-size: 14px;
-        font-weight: 500;
         margin: 0;
 
         white-space: break-spaces;
 
         color: black;
+
+        p, a {
+            font-weight: 500;
+        }
     }
 }

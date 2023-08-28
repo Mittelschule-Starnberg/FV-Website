@@ -1,0 +1,21 @@
+.Hero {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 40px;
+
+    .hero-content {
+        flex: 1 1 350px;
+
+        h2 {
+            font-size: 32px;
+            font-weight: 500;
+        }
+    }
+
+    .hero-image {
+        flex: 1 1 200px;
+        width: 100%;
+        height: auto;
+        max-width: 1920px;
+    }
+}

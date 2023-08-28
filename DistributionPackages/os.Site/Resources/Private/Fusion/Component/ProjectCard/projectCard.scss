@@ -50,6 +50,18 @@
 
         z-index: 2;
 
+        .project-year {
+            background: white;
+            outline: 1px solid white;
+            outline-offset: 2px;
+            border-radius: 6px;
+            width: fit-content;
+            padding: .3rem .5rem;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 13px;
+            color: black;
+        }
 
         .project-card-title {
             color: white;

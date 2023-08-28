@@ -1,0 +1,20 @@
+prototype(os.Site:Content.Hero) < prototype(Neos.Fusion:Component) {
+
+    headline = os.Site:Content.Headline {
+        @context.node = ${q(node).children('headline').get(0)}
+        class = 'hero-headline'
+    }
+
+    text = os.Site:Content.Text {
+        @context.node = ${q(node).children('text').get(0)}
+    }
+
+    image = os.Site:Content.Image {
+        @context.node = ${q(node).children('image').get(0)}
+        class = 'hero-image'
+    }
+
+    renderer = os.Site:Widget.Hero {
+        @apply.props = ${props}
+    }
+}

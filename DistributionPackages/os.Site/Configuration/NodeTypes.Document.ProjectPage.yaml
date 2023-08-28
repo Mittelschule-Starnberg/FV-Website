@@ -18,6 +18,12 @@
         reloadIfChanged: true
         inspector:
           group: 'general'
+    schoolYear:
+      type: string
+      ui:
+        label: 'Schuljahr'
+        inspector:
+          group: 'general'
   childNodes:
     title:
       type: 'os.Site:Content.Headline'

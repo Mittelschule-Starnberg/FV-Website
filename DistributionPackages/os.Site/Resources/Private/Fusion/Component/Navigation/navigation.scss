@@ -122,11 +122,10 @@
                 display: flex;
                 grid-gap: 10px;
 
-                padding: var(--dynamic-padding) 0;
-
                 @include media-down('lg') {
                     background: var(--primary-blue);
                     display: grid;
+                    padding: 20px 0;
                 }
             }
 

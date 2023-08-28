@@ -12,6 +12,8 @@ prototype(os.Site:Content.ProjectCard) < prototype(Neos.Fusion:Component) {
         node = ${q(node).get(0)}
     }
 
+    schoolYear = ${q(node).property('schoolYear')}
+
     renderer = os.Site:Widget.ProjectCard {
         @apply.props = ${props}
     }

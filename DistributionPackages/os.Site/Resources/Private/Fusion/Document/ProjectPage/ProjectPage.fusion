@@ -9,6 +9,10 @@ prototype(os.Site:Document.ProjectPage) < prototype(os.Site:Document.AbstractPag
                 @context.node = ${q(node).children('text').get(0)}
             }
 
+            schoolYear = os.Site:Content.Text {
+                @context.node = ${q(node).property('schoolYear')}
+            }
+
             thumbnail = Sitegeist.Kaleidoscope:AssetImageSource {
                 @context.asset = ${q(node).property('thumbnail')}
             }
@@ -19,11 +23,14 @@ prototype(os.Site:Document.ProjectPage) < prototype(os.Site:Document.AbstractPag
 
                 // prevent adding default css class .neos-contentcollection
                 attributes.class.@process.collectionClass >
+                // add custom css classes
+                attributes.class = 'gallery'
             }
 
             renderer = afx`
                 <main class="ProjectPage l-contentWidth l-widget">
                     <div class="ProjectPage-head">
+                        {props.schoolYear}
                         {props.title}
                         {props.text}
                     </div>

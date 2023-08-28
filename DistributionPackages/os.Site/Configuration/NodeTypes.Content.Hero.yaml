@@ -1,0 +1,16 @@
+'os.Site:Content.Hero':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Hero
+    icon: 'icon-fire'
+    position: 200
+    inlineEditable: false
+    group: 'widgets'
+  childNodes:
+    headline:
+      type: 'os.Site:Content.Headline'
+    text:
+      type: 'os.Site:Content.Text'
+    image:
+      type: 'os.Site:Content.Image'

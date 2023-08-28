@@ -26,7 +26,7 @@ prototype(os.Site:Content.Image) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`
         <Sitegeist.Lazybones:Image
-            class="container-image"
+            class={props.class}
             lazy={true}
             lazyWidth={200}
             imageSource={props.src}
