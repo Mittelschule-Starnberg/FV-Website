@@ -1,0 +1,13 @@
+prototype(os.Site:Content.imageGrid) < prototype(Neos.Fusion:Component) {
+
+    images = Neos.Fusion:Loop {
+        items = ${q(node).children()}
+        itemRenderer = os.Site:Content.Image {
+            @context.node = ${item}
+        }
+    }
+
+    renderer = os.Site:Element.imageGrid {
+        @apply.props = ${props}
+    }
+}

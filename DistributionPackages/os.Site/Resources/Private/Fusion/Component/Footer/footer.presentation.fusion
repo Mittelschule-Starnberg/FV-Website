@@ -1,7 +1,7 @@
 prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
-        <div class="footer">
+        <footer class="footer">
             <div class="footer-inner">
                 {props.sections}
                 <div class="footer-bottom">
@@ -15,6 +15,6 @@ prototype(os.Site:Widget.Footer) < prototype(Neos.Fusion:Component) {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     `
 }
