@@ -1,0 +1,8 @@
+prototype(os.Site:Element.imageGrid) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <div class="imageGrid">
+            {props.images}
+        </div>
+    `
+}

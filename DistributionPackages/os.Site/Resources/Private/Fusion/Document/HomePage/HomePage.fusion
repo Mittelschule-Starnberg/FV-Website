@@ -15,4 +15,22 @@ prototype(os.Site:Document.HomePage) < prototype(os.Site:Document.AbstractPage) 
             {props.main}
         `
     }
+
+    @cache {
+        mode = 'uncached'
+
+        entryIdentifier {
+            mode = ${node}
+        }
+
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+            3 = 'site'
+        }
+
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+        }
+    }
 }
