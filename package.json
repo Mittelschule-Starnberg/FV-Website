@@ -1,0 +1,21 @@
+{
+    "name": "os.site",
+    "version": "1.0.0",
+    "scripts": {
+        "build:dev": "encore dev --watch",
+        "build:prod": "encore production"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@symfony/webpack-encore": "^3.0.0",
+        "file-loader": "^6.2.0",
+        "imports-loader": "^4.0.1",
+        "sass": "^1.52.1",
+        "sass-loader": "^13.3.2",
+        "webpack-notifier": "^1.6.0"
+    },
+    "dependencies": {
+        "@babel/core": "^7.22.9"
+    }
+}
