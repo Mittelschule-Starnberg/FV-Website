@@ -10,6 +10,8 @@ prototype(os.Site:Content.Image) < prototype(Neos.Neos:ContentComponent) {
 	# first content and should be loaded lazy otherwise not
 	lazy = ${q(node).prev().is()}
 
+    link = ${q(node).property('link')}
+
     src = Neos.Fusion:Case {
         image {
             condition = ${q(node).property('image') ? true : false}
@@ -25,7 +27,7 @@ prototype(os.Site:Content.Image) < prototype(Neos.Neos:ContentComponent) {
     alternativeText = ${q(node).property('alternativeText')}
 
     renderer = afx`
-        <Sitegeist.Lazybones:Image
+        <a href={props.link}><Sitegeist.Lazybones:Image
             class={props.class}
             lazy={true}
             lazyWidth={200}
@@ -33,7 +35,7 @@ prototype(os.Site:Content.Image) < prototype(Neos.Neos:ContentComponent) {
             srcset="320w, 400w, 480w, 600w, 640w, 720w, 768w, 800w, 960w, 1024px, 1280w, 1440w, 1600w, 1680w, 1920w, 2560w"
             sizes={props.sizes}
             alt={props.alternativeText}
-            />
+            /></a>
 	`
 
 }

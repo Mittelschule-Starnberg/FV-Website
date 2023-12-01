@@ -6,3 +6,15 @@
     label: Image
     icon: picture
     position: 300
+    inspector:
+      groups:
+        'general':
+          label: 'General'
+  properties:
+    link:
+      type: string
+      ui:
+        label: 'Target'
+        inspector:
+          group: 'general'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
